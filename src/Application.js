@@ -1,4 +1,5 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
+import HighScore from './HighScore';
 
 class Application extends Component{
 
@@ -7,7 +8,7 @@ class Application extends Component{
 
         this.state = {
             count: 0,
-            overTen: false
+            overFive: false
         }
 
     }
@@ -23,9 +24,9 @@ class Application extends Component{
     componentDidUpdate(props, state){
         console.log("Updated from", state, "to", this.state);
          //doing something weird, NOT RECOMMENDED --> add this.setState({count: this.state.count + 1})  --> Error: Maximun dept exceeded
-         if(this.state.count > 5 && this.state.count != state.count && !this.state.overTen){
+         if(this.state.count > 5 && this.state.count != state.count && !this.state.overFive){
              console.log("UPdating over 5")
-             this.setState({overTen: true}) //gets stuck be cause when overTen gets updated, this function gets called again
+             this.setState({overFive: true}) //gets stuck be cause when overFive gets updated, this function gets called again
          }
     }
 
@@ -39,7 +40,7 @@ class Application extends Component{
         return (
             <div>
                 <h1>You clicked the button {count}</h1>
-                {(this.state.overTen) ? 
+                {(this.state.overFive) ? 
                     <h3>Beat the highest score of 5!</h3>
                     : null
                 }
