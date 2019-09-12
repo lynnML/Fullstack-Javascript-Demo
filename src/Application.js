@@ -20,17 +20,17 @@ class Application extends Component{
 
     }
 
-    componentWillUpdate(props, state){
+    componentWillUpdate(props, state){ 
 
     }
 
-    componentDidUpdate(props, state){
+    componentDidUpdate(props, state){ //Safer way to update components
 
     }
 
     render(){ //method returns html or text or variables or etc....
         let  name = "Lynn";
-        
+        var test = "is this used outside of render function"
         return (
             <div>
                 <h1>Hello World</h1>
