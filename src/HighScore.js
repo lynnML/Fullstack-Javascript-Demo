@@ -1,12 +1,20 @@
 import React, {Component} from 'react';
 
-class HighSchore extends Component {
+class HighScore extends Component {
 
     render(){
-        return (
-            <h3>Beat high score of 5!</h3>
-        )
+        if(this.props.overFive){
+            
+            return (
+                <h3>Beat high score of 5!
+                    {/* <button onClick={(e) => this.props.onReset(e)}>Reset</button> */}
+                    <button onClick={this.props.onReset}>Reset</button>
+                </h3>
+            )
+        } else {
+            return null;
+        }
     }
 }
 
-export default HighSchore;
+export default HighScore;
