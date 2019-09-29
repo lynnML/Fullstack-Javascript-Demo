@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import HighScore from './HighScore';
+import './CSS/style.css';
 
 class Application extends Component{
 
@@ -27,14 +28,21 @@ class Application extends Component{
          if(this.state.count > 5 && this.state.count !== state.count && !this.state.overFive){
              console.log("UPdating over 5")
              this.setState({overFive: true}) //gets stuck be cause when overFive gets updated, this function gets called again
-         }
+             const element = React.createElement(
+                'h1',
+                {classname: 'root'},
+                'Hello World',
+            );
+            
+
+            
+            }
     }
 
-   
     resetCount = (e) => {
         console.log("Event is", e);
         this.setState({
-            count: 0,
+            count: 1,
             overFive: false
 
         })
@@ -43,8 +51,7 @@ class Application extends Component{
 
 
     render(){ //method returns html or text or variables or etc....
-        let {count} = this.state  //basically gets the count variable for the state
-    
+        let {count} = this.state  //basically gets the count variable for the state        
         return (
             <div>
                 <h1>You clicked the button {count} times!</h1>
